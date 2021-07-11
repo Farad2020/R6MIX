@@ -1,0 +1,100 @@
+﻿@model R6MIX.Models.Operator
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Operator</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpImgLink" class="control-label"></label>
+                <input asp-for="OpImgLink" class="form-control" />
+                <span asp-validation-for="OpImgLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpIconLink" class="control-label"></label>
+                <input asp-for="OpIconLink" class="form-control" />
+                <span asp-validation-for="OpIconLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label"></label>
+                <input asp-for="Role" class="form-control" />
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Origin" class="control-label"></label>
+                <input asp-for="Origin" class="form-control" />
+                <span asp-validation-for="Origin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biography" class="control-label"></label>
+                <input asp-for="Biography" class="form-control" />
+                <span asp-validation-for="Biography" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PshycoPortrait" class="control-label"></label>
+                <input asp-for="PshycoPortrait" class="form-control" />
+                <span asp-validation-for="PshycoPortrait" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Armor" class="control-label"></label>
+                <input asp-for="Armor" class="form-control" />
+                <span asp-validation-for="Armor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Speed" class="control-label"></label>
+                <input asp-for="Speed" class="form-control" />
+                <span asp-validation-for="Speed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Difficulty" class="control-label"></label>
+                <input asp-for="Difficulty" class="form-control" />
+                <span asp-validation-for="Difficulty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AbilityName" class="control-label"></label>
+                <input asp-for="AbilityName" class="form-control" />
+                <span asp-validation-for="AbilityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AbilityIcon" class="control-label"></label>
+                <input asp-for="AbilityIcon" class="form-control" />
+                <span asp-validation-for="AbilityIcon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AbilityTLDR" class="control-label"></label>
+                <input asp-for="AbilityTLDR" class="form-control" />
+                <span asp-validation-for="AbilityTLDR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AbilityDemoLink" class="control-label"></label>
+                <input asp-for="AbilityDemoLink" class="form-control" />
+                <span asp-validation-for="AbilityDemoLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

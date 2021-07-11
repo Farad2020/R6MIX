@@ -17,7 +17,7 @@ namespace R6MIX.Models
             {
                 seedSides(context);
                 seedLoadouts(context);
-                seedOperators(context);
+                //seedOperators(context);
 
                 context.SaveChanges();
             }
