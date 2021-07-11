@@ -12,5 +12,8 @@ namespace R6MIX.Data
             : base(options)
         {
         }
+        public DbSet<R6MIX.Models.Operator> Operator { get; set; }
+        public DbSet<R6MIX.Models.Side> Side { get; set; }
+        public DbSet<R6MIX.Models.Loadout> Loadout { get; set; }
     }
 }
