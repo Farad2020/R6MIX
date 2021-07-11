@@ -17,22 +17,21 @@ namespace R6MIX.Models
             {
                 seedSides(context);
                 seedLoadouts(context);
+                seedOperators(context);
 
                 context.SaveChanges();
             }
 
-
             void seedSides(Data.ApplicationDbContext context) {
                 // Look for any Side.
-                /*
                 if (context.Side.Any())
                 {
                     return;   // DB has been seeded
                 }
-                */
+                /*
                 foreach (var entity in context.Side)
                     context.Side.Remove(entity);
-
+                */
                 context.Side.AddRange(
                     new Side
                     {
@@ -49,15 +48,16 @@ namespace R6MIX.Models
 
             void seedLoadouts(Data.ApplicationDbContext context)
             {
-                // Look for any Side.
-                /*
-                if (context.Side.Any())
+                // Look for any Loadout.
+                if (context.Loadout.Any())
                 {
                     return;   // DB has been seeded
                 }
-                */
+
+                /*
                 foreach (var entity in context.Loadout)
                     context.Loadout.Remove(entity);
+                */
 
                 context.Loadout.AddRange(
                     // Filling Attacker Loadouts
@@ -109,12 +109,63 @@ namespace R6MIX.Models
                         PrimaryWeaponImg = "/media/loadoutImgs/attackerLoadouts/primary/Type-89.webp",
                         SecondaryWeapon = "BEARING 9",
                         SecondaryWeaponImg = "/media/loadoutImgs/attackerLoadouts/secondary/Bearing_9.webp",
-                        Gadget = "Breache Charge",
-                        GadgetImg = "/media/loadoutImgs/attackerLoadouts/gadget/Breache_Charge.webp",
+                        Gadget = "Breach Charge",
+                        GadgetImg = "/media/loadoutImgs/attackerLoadouts/gadget/Breach_Charge.webp",
+                    },
+
+                    //DefenderLoadouts
+                    new Loadout
+                    {
+                        Name = "AruniLoadout",
+                        PrimaryWeapon = "P10 RONI",
+                        PrimaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/primary/p10roni.png",
+                        SecondaryWeapon = "PRB92",
+                        SecondaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/secondary/PRB92.webp",
+                        Gadget = "Barbed Wire",
+                        GadgetImg = "/media/loadoutImgs/defenderLoadouts/gadget/Barbed_wire.webp",
+                    },
+                    new Loadout
+                    {
+                        Name = "WardenLoadout",
+                        PrimaryWeapon = "MPX",
+                        PrimaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/primary/MPX.webp",
+                        SecondaryWeapon = "P-10C",
+                        SecondaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/secondary/P-10C.webp",
+                        Gadget = "Nitro Cell",
+                        GadgetImg = "/media/loadoutImgs/defenderLoadouts/gadget/Nitro_Cell.webp",
+                    },
+                    new Loadout
+                    {
+                        Name = "LesionLoadout",
+                        PrimaryWeapon = "T-5 SMG",
+                        PrimaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/primary/T-5_SMG.webp",
+                        SecondaryWeapon = "Q-929",
+                        SecondaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/secondary/Q-929.webp",
+                        Gadget = "Bulletproof Camera",
+                        GadgetImg = "/media/loadoutImgs/defenderLoadouts/gadget/Bulletproof_camera.webp",
+                    },
+                    new Loadout
+                    {
+                        Name = "ElaLoadout",
+                        PrimaryWeapon = "SCORPION EVO 3 A1",
+                        PrimaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/primary/Scorpion_EVO_3_A1.webp",
+                        SecondaryWeapon = "RG15",
+                        SecondaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/secondary/RG15.webp",
+                        Gadget = "Deployable Shield",
+                        GadgetImg = "/media/loadoutImgs/defenderLoadouts/gadget/Deployable_Shield.webp",
+                    },
+                    new Loadout
+                    {
+                        Name = "EchoLoadout",
+                        PrimaryWeapon = "MP5SD",
+                        PrimaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/primary/MP5SD.webp",
+                        SecondaryWeapon = "P229 RC",
+                        SecondaryWeaponImg = "/media/loadoutImgs/defenderLoadouts/secondary/P229.webp",
+                        Gadget = "Impact Grenade",
+                        GadgetImg = "/media/loadoutImgs/defenderLoadouts/gadget/Impact_Grenade.webp",
                     }
                 );
             }
-
         }
     }
 }
