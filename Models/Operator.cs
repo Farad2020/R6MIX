@@ -53,5 +53,8 @@ namespace R6MIX.Models
 
         [System.ComponentModel.DisplayName("Unique Ability TLDR")]
         public string AbilityTLDR { get; set; }
+
+        [System.ComponentModel.DisplayName("Unique Ability Demostraition Link")]
+        public string AbilityDemoLink { get; set; }
     }
 }

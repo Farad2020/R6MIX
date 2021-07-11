@@ -11,8 +11,26 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\media\attackerMedia\attackerAbilityDemos\" />
+    <Folder Include="wwwroot\media\defenderMedia\defenderAbilityDemos\" />
+    <Folder Include="wwwroot\media\general\" />
+    <Folder Include="wwwroot\media\attackerMedia\attackerIcons\" />
+    <Folder Include="wwwroot\media\defenderMedia\defenderIcons\" />
+    <Folder Include="wwwroot\media\loadoutImgs\" />
+    <Folder Include="wwwroot\media\attackerMedia\attackerPortraits\" />
+    <Folder Include="wwwroot\media\defenderMedia\defenderPortraits\" />
+    <Folder Include="wwwroot\media\attackerMedia\attackerAbilityIcons\" />
+    <Folder Include="wwwroot\media\defenderMedia\defenderAbilityIcons\" />
   </ItemGroup>
 
 </Project>

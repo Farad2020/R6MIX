@@ -15,9 +15,9 @@ namespace R6MIX.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("ProductVersion", "5.0.6")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -51,7 +51,7 @@ namespace R6MIX.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -140,7 +140,7 @@ namespace R6MIX.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -219,6 +219,121 @@ namespace R6MIX.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("R6MIX.Models.Loadout", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Gadget")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GadgetImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrimaryWeapon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrimaryWeaponImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondaryWeapon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondaryWeaponImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Loadout");
+                });
+
+            modelBuilder.Entity("R6MIX.Models.Operator", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AbilityDemoLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AbilityIcon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AbilityName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AbilityTLDR")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Armor")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Biography")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Difficulty")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OpIconLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OpImgLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OpLoadoutId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OpSideId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Origin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PshycoPortrait")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Speed")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OpLoadoutId");
+
+                    b.HasIndex("OpSideId");
+
+                    b.ToTable("Operator");
+                });
+
+            modelBuilder.Entity("R6MIX.Models.Side", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Side");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -268,6 +383,31 @@ namespace R6MIX.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("R6MIX.Models.Operator", b =>
+                {
+                    b.HasOne("R6MIX.Models.Loadout", "OpLoadout")
+                        .WithMany("Operators")
+                        .HasForeignKey("OpLoadoutId");
+
+                    b.HasOne("R6MIX.Models.Side", "OpSide")
+                        .WithMany("Operators")
+                        .HasForeignKey("OpSideId");
+
+                    b.Navigation("OpLoadout");
+
+                    b.Navigation("OpSide");
+                });
+
+            modelBuilder.Entity("R6MIX.Models.Loadout", b =>
+                {
+                    b.Navigation("Operators");
+                });
+
+            modelBuilder.Entity("R6MIX.Models.Side", b =>
+                {
+                    b.Navigation("Operators");
                 });
 #pragma warning restore 612, 618
         }
