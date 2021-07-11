@@ -466,3 +466,8 @@ C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Loadouts\Delete
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Loadouts\Details.cshtml.g.cs
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Loadouts\Edit.cshtml.g.cs
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Loadouts\Index.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Create.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Delete.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Details.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Edit.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Index.cshtml.g.cs
