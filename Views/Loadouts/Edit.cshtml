@@ -1,0 +1,65 @@
+﻿@model R6MIX.Models.Loadout
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Loadout</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryWeapon" class="control-label"></label>
+                <input asp-for="PrimaryWeapon" class="form-control" />
+                <span asp-validation-for="PrimaryWeapon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryWeaponImg" class="control-label"></label>
+                <input asp-for="PrimaryWeaponImg" class="form-control" />
+                <span asp-validation-for="PrimaryWeaponImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondaryWeapon" class="control-label"></label>
+                <input asp-for="SecondaryWeapon" class="form-control" />
+                <span asp-validation-for="SecondaryWeapon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondaryWeaponImg" class="control-label"></label>
+                <input asp-for="SecondaryWeaponImg" class="form-control" />
+                <span asp-validation-for="SecondaryWeaponImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gadget" class="control-label"></label>
+                <input asp-for="Gadget" class="form-control" />
+                <span asp-validation-for="Gadget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GadgetImg" class="control-label"></label>
+                <input asp-for="GadgetImg" class="form-control" />
+                <span asp-validation-for="GadgetImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

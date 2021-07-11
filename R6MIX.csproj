@@ -24,13 +24,16 @@
     <Folder Include="wwwroot\media\attackerMedia\attackerAbilityDemos\" />
     <Folder Include="wwwroot\media\defenderMedia\defenderAbilityDemos\" />
     <Folder Include="wwwroot\media\general\" />
-    <Folder Include="wwwroot\media\attackerMedia\attackerIcons\" />
     <Folder Include="wwwroot\media\defenderMedia\defenderIcons\" />
-    <Folder Include="wwwroot\media\loadoutImgs\" />
     <Folder Include="wwwroot\media\attackerMedia\attackerPortraits\" />
     <Folder Include="wwwroot\media\defenderMedia\defenderPortraits\" />
     <Folder Include="wwwroot\media\attackerMedia\attackerAbilityIcons\" />
     <Folder Include="wwwroot\media\defenderMedia\defenderAbilityIcons\" />
+    <Folder Include="wwwroot\media\loadoutImgs\attackerLoadouts\gadget\" />
+    <Folder Include="wwwroot\media\loadoutImgs\attackerLoadouts\secondary\" />
+    <Folder Include="wwwroot\media\loadoutImgs\defenderLoadouts\gadget\" />
+    <Folder Include="wwwroot\media\loadoutImgs\defenderLoadouts\secondary\" />
+    <Folder Include="wwwroot\media\loadoutImgs\defenderLoadouts\primary\" />
   </ItemGroup>
 
 </Project>
