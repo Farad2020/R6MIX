@@ -174,15 +174,13 @@ namespace R6MIX.Models
             void seedOperators(Data.ApplicationDbContext context)
             {
                 // Look for any Side.
-                /*
                 if (context.Operator.Any())
                 {
                     return;   // DB has been seeded
                 }
-                */
 
-                foreach (var entity in context.Operator)
-                    context.Operator.Remove(entity);
+                //foreach (var entity in context.Operator)
+                //    context.Operator.Remove(entity);
 
                 context.Operator.AddRange(
                     //Defenders
@@ -280,6 +278,102 @@ namespace R6MIX.Models
                         AbilityIcon = "/media/defenderMedia/defenderAbilityIcons/Yokai.webp",
                         AbilityTLDR = "Equipped with an acoustic hailing device, this signature drone can fire ultrasonic bursts that disorient all targets in a given perimeter. Yokai also transmits a video feed to Echo, who keeps his immediate perimeter secure. Embrace the power of technology and embody a turret Defender who can both hold up the siege and support roamers.",
                         AbilityDemoLink = "https://www.youtube.com/watch?v=8fbdcL04xQA"
+                    },
+
+                    //Attacker
+
+                    new Operator
+                    {
+                        Name = "Ash",
+                        OpImgLink = "/media/attackerMedia/attackerPortraits/ashPortrait.png",
+                        OpIconLink = "/media/attackerMedia/attackerIcons/ash.png",
+                        Role = "Disable, Flank, Front Line, Soft Breach",
+                        Origin = "SWAT",
+                        Biography = "“You can never truly understand a conflict until you’ve been on both sides.”\nCohen’s mother is a renowned Jewish political activist and professor while her Palestinian father is a professor of Middle Eastern Studies. Cohen was raised in Israel, excelling in Mathematics and Physics. She earned a degree in Structural Engineering at Tel Aviv University and spent a few semesters at Boston University.\nCohen then enlisted in the Israeli Defense Forces (IDF). After undergoing the rigorous twenty-two month training for the elite Air Force unit, Shaldag, she served five years. Skilled in ground and airborne operations, all-weather and all-terrain navigation and reconnaissance, she was invaluable in Operation Orchard. Moving to the US to work with FBI SWAT, Cohen applied her degree in Engineering and gift in structural resistance to develop advanced demolition tactics and equipment. Along with Hebrew, Cohen is fluent in Arabic, English, French and Greek.",
+                        PshycoPortrait = "I had several meetings with Specialist Eliza “Ash” Cohen before I gave up on convincing her to not see me as a commanding officer. She asked so many probing questions, it was starting to feel as though she were analyzing me. […]\nCohen isn’t interested in discussing her childhood. There’s resentment toward a judgmental grandmother, but no lasting trauma. Military service acted as an escape from family tensions and appealed to her ordered and focused personality. Cohen added that she appreciates high-risk, high-reward scenarios, but didn’t elaborate on what level of personal risk is acceptable.\nHer identity is intertwined with her military training and operations. Extracting anything personal from the tangle is difficult. Cohen is cautious and doesn’t cultivate many close relationships. Her bond with Specialist Miles “Castle” Campbell is therefore important to her – and I would say to the team as well. It’s certainly a good pairing. Campbell’s amenable personality enables Cohen to step out of her comfort zone without feeling self-conscious or judged. […]\nCohen uses other people’s assessments to describe herself: She told me that Specialists Dominic “Bandit” Brunsmeier and James “Smoke” Porter tell her she’s “too serious,” while others describe her as “intense,” and that she enjoys being proven right. So I asked if she thought those descriptions were accurate. She told me that she only cares about whether the other operators respect her. I’m confident they do. […]\nOn operations, Cohen is exemplary: She thinks fast, and her aggressive style almost always puts her at an advantage. During debriefs, however, I’ve noticed a different kind of focus. The residual stress of combat causes her to dwell on every misstep, perceived or real. Self-evaluation is understandable from someone so highly skilled, but it also has an effect on her team. It’s important to encourage her to process the events as a joint effort and not simply assume the critique alone. Cohen – like all operators – knows there will be situations she can’t prepare for. And yet, she alone allows the stress of the unknown to eat at her. This will need to be addressed.\n-- Dr. Harishva “Harry” Pandey, Director of Rainbow",
+                        Armor = 1,
+                        Speed = 3,
+                        Difficulty = 2,
+                        OpSide = context.Side.Where(s => s.Name == "Attacker").FirstOrDefault(),
+                        OpLoadout = context.Loadout.Where(l => l.Name == "AshLoadout").FirstOrDefault(),
+                        AbilityName = "BREACHING ROUNDS",
+                        AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Breaching-Rounds.webp",
+                        AbilityTLDR = "Ash is a fast-paced front liner; capable of breaching, flanking and dividing the Defender's attention in seconds.\nAsh is capable of ranged soft breaching thanks to her modified M120 CREM Breaching Rounds.",
+                        AbilityDemoLink = "https://www.youtube.com/watch?v=aA4X-wsKskA"
+                    },
+                    new Operator
+                    {
+                        Name = "Thermite",
+                        OpImgLink = "/media/attackerMedia/attackerPortraits/thermitePortrait.png",
+                        OpIconLink = "/media/attackerMedia/attackerIcons/thermite.png",
+                        Role = "Back Line,Hard Breach",
+                        Origin = "SWAT",
+                        Biography = "“You see a wall, I see an opportunity.”\nTrace joined the Corps straight out of high school, making him a fourth-generation Marine. Following his first tour of Iraq, he obtained enough experience to volunteer as an explosive ordnance disposal technician. After his second tour of Iraq, Trace returned to the U.S., enrolled in university, and earned a Bachelor of Science in Chemistry. He brought his experience and skills to the FBI, where he spent a number of years as a field agent within the Hazardous Materials Response Unit. Seeking more dynamic environments, Trace transferred into FBI SWAT, where he excelled at developing new barricade protocols. He then earned a spot in Rainbow where he’s shown further interest in research and development on gadget upgrades. Trace’s hometown of Plano has a major concentration of Chinese Americans, and as such Trace has conversational level of Mandarin.",
+                        PshycoPortrait = "For someone so disciplined and orderly, Specialist Jordan “Thermite” Trace likes to surprise. He can be a practical joker and he’s always ready with a smart aleck comment. Beneath the surface, however, the recent loss of his sister to cancer, and the death of his mother a few years prior, have made it difficult for him to channel his thoughts and energy with the focus to which he is accustomed. […] I am concerned that he uses humor to avoid his grief. It’s important he understands that some coping mechanisms can delay the healing process. There are resources that can help him, and I will continue to offer them when and where I may. […]\nTrace demonstrates strong tactical leadership, but can also plow ahead without consensus. I don’t believe there’s any lasting friction with other team members. He’s well-liked by the others and has a solid working relationship with Specialists Yumiko “Hibana” Imagawa, Mike “Thatcher” Baker, and Emmanuelle “Twitch” Pichon. He can be quite the social-butterfly in his downtime. […]\nA few things to work on: Trace has excellent communication, when he chooses to use it. He has good strategies but sometimes tends to “lock in.” I know that he’s capable of being a more agile thinker, so I’ve given him some tips on how to recognize when he’s becoming too… bullheaded. […]\nThere’s a lot going on behind his smile. I’d like him to find a way to regulate himself, to find balance for his work and private life. Trace doesn’t show obvious stressors, opting instead to channel any anxious energy into something positive such as the R&D lab. It has been difficult to convince him that he needs a break from his role and identity as an operator. Shifting his attention to other intense tasks isn’t a solution. […] I’ve given him some mental relaxation exercises that don’t demand considerable time, but can be tackled throughout the day. Imagawa, in particular, can be a good influence on him since she regularly practices mindfulness techniques to focus and relax. I hope he will take her advice to heart.\n-- Dr. Harishva “Harry” Pandey, Director of Rainbow",
+                        Armor = 2,
+                        Speed = 2,
+                        Difficulty = 1,
+                        OpSide = context.Side.Where(s => s.Name == "Attacker").FirstOrDefault(),
+                        OpLoadout = context.Loadout.Where(l => l.Name == "ThermiteLoadout").FirstOrDefault(),
+                        AbilityName = "EXOTHERMIC CHARGE",
+                        AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Exothermic-Charge.webp",
+                        AbilityTLDR = "Thermite is an important backline support for an attacking team. As one of the only hard-breachers in the game, losing Thermite early in the round will hinder your team significantly. Playing Thermite requires patience, leadership and strong communication with your team.",
+                        AbilityDemoLink = "https://www.youtube.com/watch?v=ewd81XAupgk"
+                    },
+                    new Operator {
+                        Name = "Zero",
+                        OpImgLink = "/media/attackerMedia/attackerPortraits/zeroPortrait.png",
+                        OpIconLink = "/media/attackerMedia/attackerIcons/zero.png",
+                        Role = "Intel Denier,Intel Gatherer",
+                        Origin = "ROS",
+                        Biography = "“Prepare, execute, vanish.”\nThough the CIA and Third Echelon have classified the majority of Fisher’s childhood it is known he was born in the Baltimore suburb of Towson, Maryland, where he was raised by his paternal grandmother, Sarah. He was enrolled in a Military Boarding School where he learned to focus his energy, hone his skills, and to either follow orders or be sure to hide the evidence.\nFrom school Fisher enrolled directly in the United States Naval Academy where he majored in Political Science and later went on to pursue SEALs Training. While serving in the Persian Gulf, Bolivia, Columbia, Senegal, and Kosovo, Fisher became known for his ability to complete the mission, regardless of personal cost. After being awarded a Defense Distinguished Service Medal, Fisher spent time as an instructor at Little Creek Naval Base, Virginia.\nHe was recruited to the CIA, where he [REDACTED].",
+                        PshycoPortrait = "Although these are my first interactions and observations of Specialist Samuel Leo “Zero” Fisher, I feel that I’m finally getting a glimpse of the man behind the legend. He doesn’t brag about what he’s done or what he can do, but you can see his training in the way he moves and the critical assessment with which he evaluates his surroundings. If he were to read my evaluation, I’m sure he’d agree. […]\nIt’s hard to pry details from the former Echelon agent. He is focused , to the point, and makes it clear when he’s done with a subject. His mandate was never to seek out conflict, but to perform damage control before there was any evidence of a disaster. Fisher’s skills and temperament ensure that he keeps a clear head under pressure and is always prepared, regardless of circumstance. I’m interested to see if he has a leveling influence on some of our more hotheaded specialists such as Evans and Brunsmeier.\nThough his sarcasm can seem abrasive to those who aren’t familiar with him – and maybe even to those who are – it hides a deep thoughtfulness and attention to detail. He can see right into the heart of an issue, or person – I look forward to his assessment and his suggestions for the improvements we can make to our training program. […]\nHe doesn’t want to talk about his daughter, but I feel that’s more of a warning than an indication of any residual conflict between them. [REDACTED]\n(Comment_S. Fisher: Great observation, also correct.)\nFisher is very much a solo operator, though he possesses a sense of duty to his colleagues and teammates and shows his affection through action. I’m hoping to draw him out of his shell and show him the benefits of working with the R6 Program. Based on his background as an instructor I feel he’ll appreciate more than the resources we can offer him, but also gain some satisfaction in the influence he’ll have on the R6 Program, and his teammates.\n(Comment_S. Fisher: Is one of the benefits coffee, because I’m running low.)\n-- Dr. Harishva \"Harry\" Pandey, Director of Rainbow",
+                        Armor = 2,
+                        Speed = 2,
+                        Difficulty = 3,
+                        OpSide = context.Side.Where(s => s.Name == "Attacker").FirstOrDefault(),
+                        OpLoadout = context.Loadout.Where(l => l.Name == "ZeroLoadout").FirstOrDefault(),
+                        AbilityName = "ARGUS LAUNCHER",
+                        AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Argus-Launcher.webp",
+                        AbilityTLDR = "Intel is crucial to a good attack strategy, and Zero is well aware of that. His Argus Launcher is equipped with very special cameras that can lodge themselves into breakable and reinforced surface to surveil either side.\nYes, these cameras can cover two angles and effectively allow you to spy on the opposing team. Argus Cameras do have one more quirk though: a single laser shot, perfect for destroying key elements in the Defenders’ setup or drawing attention away from choke points.",
+                        AbilityDemoLink = "https://www.youtube.com/watch?v=I6hswz4rIrU"
+                    },
+                    new Operator {
+                        Name = "Dokkaebi",
+                        OpImgLink = "/media/attackerMedia/attackerPortraits/dokkaebiPortrait.png",
+                        OpIconLink = "/media/attackerMedia/attackerIcons/dokkaebi.png",
+                        Role = "Anti Roam,Flank,Intel Denier,Intel Gatherer",
+                        Origin = "707TH SMB",
+                        Biography = "“You say potato, I say botnet.”\nNam's math and technology skills earned her a National Academic Excellence Scholarship at KAIST (the Korean Advanced Institute of Science and Technology). She served in the Republic of Korea Army (ROK), where her adeptness with technology saw her assigned to the 5163 Army Division. Looking for a chance from office life, Nam earned her place in the 9th Special Forces Brigade, known as the Ghost corps, where she trained in mountaineering, survival techniques, and guerrilla warfare. Highly adaptable, Nam often utilizes a creative, unorthodox approach to gets results. This skill didn’t go unnoticed by the USFK or the 707th Special Mission Battalion. Encouraged to focus on breaching defenses and exploiting weaknesses in networks, Nam was quickly recruited to the 707th and deployed alongside Specialist Chul Kyung Hwa, codename “Vigil,” until their recruitment into Rainbow. Nam works closely with Specialist Masaru “Echo” Enatsu in the R&D lab, engineering new countermeasure technologies.",
+                        PshycoPortrait = "Grace Nam is playful, clever, serious, and reckless as her codename – Dokkaebi – implies. She’s also mischievous. Recent reports say she’s been pushing herself beyond her limits and the team has expressed concern that she’s over-confident. Added to that, we have past disciplinary reports stating that her actions have been “unorthodox,” which I can believe. I was there when she hacked the system; I saw the promise when other people wanted her punished. […]\nNam’s a talented operator. But it’s important to note that she’s one of the younger Rainbow recruits and has little combat experience. This job is intense, and the stakes are high. Some days, I have the impression she would rather be behind her computer, controlling things from where no one can touch her. But she wants to improve; she wants to change. And to do that, she has to challenge herself.\nI’m certain the over-confidence is about fear. She’s afraid she doesn’t belong, that she isn’t good enough. As for past discinplinary hearings, the shortcomings are with the commanders, not with Nam. A talented hacker isn’t just someone who’s good with code, they’re a creative thinker with the ability to see connections the rest of us can’t. Yes, there’s recklessness. Yes, there’s an element of bravado. But whatever else people may see, they must also admit that there’s a method to Nam’s madness. […]\nWhen I asked about her childhood, she boasted of schoolyard fights and described the extreme academic pressures she faced. The school would shame parents by publically comparing their children. She’s carried this burden of expectation throughout her life, so to have Specialist Chul Kyung “Vigil” Hwa chastise her creates a friction that Nam will have to address. […]\nShe told me her grandparents introduced her to Buddhism when she was little and that she’s recently begun visiting the temple again. I’m reassured. This is her way to cleanse her mind and spirit. Her pursuit of inner balance will allow Nam to achieve her full potential. Her bluster may irritate operators such as Specialist Yumiko “Hibana” Imagawa, but I say let her be.\n-- Dr. Harishva “Harry” Pandey, Director of Rainbow",
+                        Armor = 2,
+                        Speed = 2,
+                        Difficulty = 2,
+                        OpSide = context.Side.Where(s => s.Name == "Attacker").FirstOrDefault(),
+                        OpLoadout = context.Loadout.Where(l => l.Name == "DokkaebiLoadout").FirstOrDefault(),
+                        AbilityName = "LOGIC BOMB",
+                        AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Logic-Bomb.webp",
+                        AbilityTLDR = "Grace utilizes the Ballistic Armor Military Laptop, codenamed Logic Bomb, which she uses to hack enemy PDA tactical devices. The program downloads a virus of her making that can bypass firewalls, turning surrounding devices on and emitting a loud noise to compromise an enemy’s position.",
+                        AbilityDemoLink = "https://www.youtube.com/watch?v=4MfOe_7J8u4"
+                    },
+                    new Operator
+                    {
+                        Name = "Hibana",
+                        OpImgLink = "/media/attackerMedia/attackerPortraits/hibanaPortrait.png",
+                        OpIconLink = "/media/attackerMedia/attackerIcons/hibana.png",
+                        Role = "Back Line,Front Line,Hard Breach",
+                        Origin = "S.A.T.",
+                        Biography = "“Kyūdō is meditation in action. Explosions are part of that action.”\nImagawa is an expert in paramilitary techniques and infiltration of high-risk areas, demonstrating brilliant leadership skills in the field. Encouraged by her family, she has been practicing the long-range martial art of Kyūdō from an early age and possesses the ability to assess multiple factors simultaneously while executing precise, controlled, and fluid motions. Having trained with CTUs around the world including the SAS, FBI SWAT, and GIGN, Hibana has acquired a rare tactical versatility, with proficiency in tubular (bus, train, and airplane) assaults. During her studies at the National Police Academy, she gained the nickname Hibana due to her improvised explosive devices. Fluent in several languages and lethal with any weapon, Imagawa was recruited by the Aichi Prefectural Police Department Special Assault Team, where her diverse techniques and charisma resulted in her to moving quickly up the ranks.",
+                        PshycoPortrait = "Specialist Yumiko “Hibana” Imagawa has considerable talents. I only know a few others with as many commendations. Inspiring operatives from diverse backgrounds and putting people at ease comes naturally to her, and she’s certainly gracious with my poor attempts at Japanese. […]\nI enjoy our conversations. Imagawa is very lyrical in the way she recounts her experiences. For someone who’s been around the world and encountered so many cultures, her favorite stories are of her childhood home. Like when her father would come home from his work as a butcher, and Imagawa’s mother wouldn’t allow him inside until they had hosed him down in the garden. The image of her drenched, barefoot father dancing under the spray of frigid water was a great amusement to the family. I like the story.\nMemories likese these keep us grounded and I wondered if training in Kyudo had fostered this appreciation in her. When I suggested that she had an aura of inner serenity, she laughed and called me a “hippie.” […] I’d like to see if she can influence some of the others to maintain that calm sensibility. Her training with so many CTUs makes her an ideal fit for the role. Already within Rainbow Imagawa is universally respected. […]\nI sense that Imagawa’s motivations are stoked by some inner fire, but she also has a competitive drive with fellow operatives. The debrief reports indicate as much. […] Imagawa does appear to be uncustomarily impatient with Specialist Grace “Dokkaebi” Nam, despite them often spending lab time together.\nThe dynamic surprises me because I can’t quite pin it down. When I asked, Imagawa said I was mistaken, and Dokkaebi seems not to notice or to care. I’ve read the reports and my hunch hovers over some joint training exercise with the GIGN. Imagawa may envy Nam’s easy self-assurance, which corresponds with records concerning Imagawa’s younger sister. Still, I’d like to explore this further. They aren’t necessarily at loggerheads, but it may affect future operations in some way we can’t foresee if I can’t determine the source of the rupture in Imagawa’s calm.\n-- Dr. Harishva “Harry” Pandey, Director of Rainbow",
+                        Armor = 1,
+                        Speed = 3,
+                        Difficulty = 1,
+                        OpSide = context.Side.Where(s => s.Name == "Attacker").FirstOrDefault(),
+                        OpLoadout = context.Loadout.Where(l => l.Name == "HibanaLoadout").FirstOrDefault(),
+                        AbilityName = "X-KAIROS",
+                        AbilityIcon = "/media/attackerMedia/defenderAbilityIcons/X-Kairos.webp",
+                        AbilityTLDR = "The X-KAIROS - a 40 mm caliber launcher - fires explosive pellets that can be detonated simultaneously from a distance. Deliver innovative assaults by creating lines of sights, or new pathways!",
+                        AbilityDemoLink = "https://www.youtube.com/watch?v=12hNVzz4CYY"
                     }
 
                 );
