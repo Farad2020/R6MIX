@@ -1,0 +1,13 @@
+﻿@model IEnumerable<R6MIX.Models.ApiModels.Player>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Players</h1>
+    @foreach (var item in Model)
+    {
+        <p>@item.first_name</p>
+    }
+</div>

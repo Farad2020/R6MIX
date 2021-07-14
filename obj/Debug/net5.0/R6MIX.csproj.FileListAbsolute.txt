@@ -471,3 +471,4 @@ C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Delet
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Details.cshtml.g.cs
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Edit.cshtml.g.cs
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Operators\Index.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\ESportAPI\Index.cshtml.g.cs
