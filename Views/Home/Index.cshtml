@@ -5,10 +5,15 @@
 }
 
 <div class="text-center">
+
+    <h1 class="display-4">Welcome To R6MIX</h1>
+    <p>R6MIX is a website dedicated to a hero based tactical shooter game "Rainbow 6: Siege"</p>
+    <p>R6MIX is currently give access to a information about ESport events through PandaScore API and allows to check out some Operators</p>
+
     <h1 class="display-4">OPERATORS</h1>
     <div class="d-flex align-items-center justify-content-center row">
-            @foreach (var item in Model)
-            {
+        @foreach (var item in Model)
+        {
             <div class="col-3 pb-3">
                 <div class="card bg-dark mb-3">
                     <img class="card-img-top" src="@item.OpImgLink" alt="Op image" style="height: 200px; width: auto;">
@@ -19,6 +24,6 @@
                     </div>
                 </div>
             </div>
-            }
+        }
     </div>
 </div>
