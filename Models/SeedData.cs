@@ -201,7 +201,7 @@ namespace R6MIX.Models
                         AbilityName = "GLANCE SMART GLASSES",
                         AbilityIcon = "/media/defenderMedia/defenderAbilityIcons/Glance-Smart-Glasses.webp",
                         AbilityTLDR = "The Glance serves a function that was almost non-existent on the Defending team. With it active, Warden can see through smoke and turn around what could be a low-intel situation. Activating his Smart Glasses can also prevent Warden from being blinded by flash effects, or cleanse an existing flash blindness, salvaging an otherwise dangerous few seconds. However, the Glance’s thermal vision only works as long as Warden stays immobile; otherwise, he is affected by smoke the same as everyone else. The Glance is a triggered effect, which must be restored through a cooldown after use.",
-                        AbilityDemoLink = "https://youtu.be/qpZBD30L7fo"
+                        AbilityDemoLink = "qpZBD30L7fo"
                     },
                     new Operator
                     {
@@ -220,7 +220,7 @@ namespace R6MIX.Models
                         AbilityName = "SURYA GATE",
                         AbilityIcon = "/media/defenderMedia/defenderAbilityIcons/Surya-Gate.webp",
                         AbilityTLDR = "Once in place, the gate projects a laser array capable of detecting anyone moving through it. When an intruder is detected, energy output to the laser increases, causing second- and third-degree burns. We spent nearly an hour tossing everything from wads of paper to pieces of fruit through until we found a setting that maximizes damage while limiting energy consumption.",
-                        AbilityDemoLink = "https://youtu.be/7LLwRc0EUp8"
+                        AbilityDemoLink = "7LLwRc0EUp8"
                     },
                     new Operator
                     {
@@ -239,7 +239,7 @@ namespace R6MIX.Models
                         AbilityName = "GU MINES",
                         AbilityIcon = "/media/defenderMedia/defenderAbilityIcons/Gu-mines.webp",
                         AbilityTLDR = "Gu mines were inspired by the sharp punji sticks used during the Vietnam War. Rubbed with toxic plants or feces, the stakes served to slow down enemy troops by causing severe infections in their camp. Similarly, Gu mines inject a toxin that injure your opponent and limit their speed.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=6Q-sSKQGJdA"
+                        AbilityDemoLink = "6Q-sSKQGJdA"
                     },
                     new Operator
                     {
@@ -258,7 +258,7 @@ namespace R6MIX.Models
                         AbilityName = "GRZMOT MINE",
                         AbilityIcon = "/media/defenderMedia/defenderAbilityIcons/Grzmot-Mine.webp",
                         AbilityTLDR = "Inspired by the 1939 anti-tank Polish grenades used by the iconic Cichociemny during WWII, the sticky Grzmot mines can be anchored on surfaces, impairing hearing and causing a dizzying effect. These concussion mines are triggered upon proximity, affecting anyone within its radius.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=6Q-sSKQGJdA"
+                        AbilityDemoLink = "6Q-sSKQGJdA"
                     },
                     new Operator
                     {
@@ -277,7 +277,7 @@ namespace R6MIX.Models
                         AbilityName = "YOKAI",
                         AbilityIcon = "/media/defenderMedia/defenderAbilityIcons/Yokai.webp",
                         AbilityTLDR = "Equipped with an acoustic hailing device, this signature drone can fire ultrasonic bursts that disorient all targets in a given perimeter. Yokai also transmits a video feed to Echo, who keeps his immediate perimeter secure. Embrace the power of technology and embody a turret Defender who can both hold up the siege and support roamers.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=8fbdcL04xQA"
+                        AbilityDemoLink = "8fbdcL04xQA"
                     },
 
                     //Attacker
@@ -299,7 +299,7 @@ namespace R6MIX.Models
                         AbilityName = "BREACHING ROUNDS",
                         AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Breaching-Rounds.webp",
                         AbilityTLDR = "Ash is a fast-paced front liner; capable of breaching, flanking and dividing the Defender's attention in seconds.\nAsh is capable of ranged soft breaching thanks to her modified M120 CREM Breaching Rounds.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=aA4X-wsKskA"
+                        AbilityDemoLink = "aA4X-wsKskA"
                     },
                     new Operator
                     {
@@ -318,7 +318,7 @@ namespace R6MIX.Models
                         AbilityName = "EXOTHERMIC CHARGE",
                         AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Exothermic-Charge.webp",
                         AbilityTLDR = "Thermite is an important backline support for an attacking team. As one of the only hard-breachers in the game, losing Thermite early in the round will hinder your team significantly. Playing Thermite requires patience, leadership and strong communication with your team.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=ewd81XAupgk"
+                        AbilityDemoLink = "ewd81XAupgk"
                     },
                     new Operator {
                         Name = "Zero",
@@ -336,7 +336,7 @@ namespace R6MIX.Models
                         AbilityName = "ARGUS LAUNCHER",
                         AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Argus-Launcher.webp",
                         AbilityTLDR = "Intel is crucial to a good attack strategy, and Zero is well aware of that. His Argus Launcher is equipped with very special cameras that can lodge themselves into breakable and reinforced surface to surveil either side.\nYes, these cameras can cover two angles and effectively allow you to spy on the opposing team. Argus Cameras do have one more quirk though: a single laser shot, perfect for destroying key elements in the Defenders’ setup or drawing attention away from choke points.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=I6hswz4rIrU"
+                        AbilityDemoLink = "I6hswz4rIrU"
                     },
                     new Operator {
                         Name = "Dokkaebi",
@@ -354,7 +354,7 @@ namespace R6MIX.Models
                         AbilityName = "LOGIC BOMB",
                         AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/Logic-Bomb.webp",
                         AbilityTLDR = "Grace utilizes the Ballistic Armor Military Laptop, codenamed Logic Bomb, which she uses to hack enemy PDA tactical devices. The program downloads a virus of her making that can bypass firewalls, turning surrounding devices on and emitting a loud noise to compromise an enemy’s position.",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=4MfOe_7J8u4"
+                        AbilityDemoLink = "4MfOe_7J8u4"
                     },
                     new Operator
                     {
@@ -373,7 +373,7 @@ namespace R6MIX.Models
                         AbilityName = "X-KAIROS",
                         AbilityIcon = "/media/attackerMedia/defenderAbilityIcons/X-Kairos.webp",
                         AbilityTLDR = "The X-KAIROS - a 40 mm caliber launcher - fires explosive pellets that can be detonated simultaneously from a distance. Deliver innovative assaults by creating lines of sights, or new pathways!",
-                        AbilityDemoLink = "https://www.youtube.com/watch?v=12hNVzz4CYY"
+                        AbilityDemoLink = "12hNVzz4CYY"
                     }
 
                 );

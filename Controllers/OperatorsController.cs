@@ -33,7 +33,7 @@ namespace R6MIX.Controllers
                 return NotFound();
             }
 
-            var @operator = await _context.Operator
+            var @operator = await _context.Operator.Include(m => m.OpSide).Include(m => m.OpLoadout)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (@operator == null)
             {
