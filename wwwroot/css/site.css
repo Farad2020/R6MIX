@@ -66,6 +66,10 @@ a {
     color: var(--bg-complementary)
 }
 
+.enable-new-line {
+    white-space: pre-wrap;
+}
+
 .navbar-dim {
     background-color: var(--bg-complementary) !important;
 }
