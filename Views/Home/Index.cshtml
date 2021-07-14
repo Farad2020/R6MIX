@@ -1,12 +1,24 @@
-﻿@{
+﻿@model IEnumerable<R6MIX.Models.Operator>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-
-    <img src="~/media/general/r6logo.png" />
-    <p>And next is webp</p>
-    <img src="~/media/general/r6logo.webp" />
+    <h1 class="display-4">OPERATORS</h1>
+    <div class="d-flex align-items-center justify-content-center row">
+            @foreach (var item in Model)
+            {
+            <div class="col-3 pb-3">
+                <div class="card bg-dark mb-3">
+                    <img class="card-img-top" src="@item.OpImgLink" alt="Op image" style="height: 200px; width: auto;">
+                    <div class="card-body bg-grey text-dark py-2">
+                        <a class="stretched-link nav-link py-1" asp-controller="Operators" asp-action="Details" asp-route-id="@item.Id">
+                            <h5 class="font-weight-bold">@item.Name</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            }
+    </div>
 </div>

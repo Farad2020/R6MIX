@@ -1,13 +1,26 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+
+
 :root {
     --bg-main: #24262A;
     --bg-complementary: #222222;
     --text-primary-color: #fff;
     --text-grey: #6C757D;
+    --text-dark: #24262A;
+    --contrast-blue: #2499FF;
+    --bg-grey: #C3C3C3;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+.bg-grey{
+    background-color: var(--bg-grey);
+}
+
+.text-hover-grey:hover {
+    color: var(--text-grey);
+}
 
 a.navbar-brand {
     white-space: normal;
@@ -27,7 +40,7 @@ a {
 }
 
 .nav-logo {
-    width: 60px;
+    width: 150px;
     height: auto;
 }
 
@@ -37,12 +50,20 @@ a {
     border-color: #fff;
 }
 
-.nav-link:hover {
+.nav-item .nav-link {
     color: var(--text-grey)
 }
 
+    .nav-item.nav-link:hover {
+        color: var(--text-primary-color)
+    }
+
+.nav-link {
+    color: var(--text-dark)
+}
+
 .nav-link:hover {
-    color: var(--text-grey)
+    color: var(--bg-complementary)
 }
 
 .navbar-dim {
@@ -88,7 +109,7 @@ body {
     margin-bottom: 60px;
     background-color: var(--bg-main);
     color: var(--text-primary-color);
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .footer {
     position: absolute;
