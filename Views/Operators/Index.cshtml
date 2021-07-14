@@ -17,9 +17,6 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OpImgLink)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.OpIconLink)
             </th>
             <th>
@@ -28,12 +25,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Origin)
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Biography)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PshycoPortrait)
-            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Armor)
             </th>
@@ -49,12 +40,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.AbilityIcon)
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.AbilityTLDR)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.AbilityDemoLink)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -63,10 +48,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <img src="@item.OpImgLink" />
-                @Html.DisplayFor(modelItem => item.OpImgLink)
             </td>
             <td>
                 <img src="@item.OpIconLink" />
@@ -78,12 +59,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Origin)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Biography)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PshycoPortrait)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Armor)
             </td>
@@ -100,16 +75,10 @@
                 <img src="@item.AbilityIcon" />
                 @Html.DisplayFor(modelItem => item.AbilityIcon)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.AbilityTLDR)
-            </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.AbilityDemoLink)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-sm btn-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-sm btn-dark" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-sm btn-dark" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

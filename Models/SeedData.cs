@@ -371,7 +371,7 @@ namespace R6MIX.Models
                         OpSide = context.Side.Where(s => s.Name == "Attacker").FirstOrDefault(),
                         OpLoadout = context.Loadout.Where(l => l.Name == "HibanaLoadout").FirstOrDefault(),
                         AbilityName = "X-KAIROS",
-                        AbilityIcon = "/media/attackerMedia/defenderAbilityIcons/X-Kairos.webp",
+                        AbilityIcon = "/media/attackerMedia/attackerAbilityIcons/X-Kairos.webp",
                         AbilityTLDR = "The X-KAIROS - a 40 mm caliber launcher - fires explosive pellets that can be detonated simultaneously from a distance. Deliver innovative assaults by creating lines of sights, or new pathways!",
                         AbilityDemoLink = "12hNVzz4CYY"
                     }
