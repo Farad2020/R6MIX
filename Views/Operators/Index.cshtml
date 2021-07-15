@@ -17,9 +17,6 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OpIconLink)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Role)
             </th>
             <th>
@@ -31,15 +28,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Speed)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Difficulty)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AbilityName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AbilityIcon)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,10 +36,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <img src="@item.OpIconLink" />
-                @Html.DisplayFor(modelItem => item.OpIconLink)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Role)
@@ -67,13 +51,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Difficulty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AbilityName)
-            </td>
-            <td>
-                <img src="@item.AbilityIcon" />
-                @Html.DisplayFor(modelItem => item.AbilityIcon)
             </td>
             <td>
                 <a class="btn btn-sm btn-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

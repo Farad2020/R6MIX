@@ -1,0 +1,30 @@
+﻿@model R6MIX.Models.League
+
+@{
+    ViewData["Title"] = "League";
+}
+
+<div class="text-center">
+    <h1 class="display-4 font-italic">@Model.name</h1>
+    <div class="d-flex align-items-end justify-content-center row">
+        <div class="bg-dark  d-flex justify-content-center pb-2">
+            <img class="card-img-top" src="@Model.image_url" alt="League image" style="width: 100px; height: auto;">
+        </div>
+    </div>
+</div>
+<div>
+    @if (Model.series != null)
+    {
+        foreach (var serie in Model.series)
+        {
+            <hr class="m-0 ml-2 mb-3" style="background-color: white; height: 1px;" />
+            @if (serie.description != null) { <p>Description: @serie.description</p> }
+            @if (serie.full_name != null) { <p>Name: @serie.full_name</p> }
+            @if (serie.begin_at != null) { <p>Begins At: @serie.begin_at</p> }
+            @if (serie.end_at != null) { <p>Ends At: @serie.end_at</p> }
+            @if (serie.season != null) { <p>Season: @serie.season</p> }
+            @if (serie.year != null) { <p>Year: @serie.year</p> }
+            @if (serie.tier != null) { <p>Tier: @serie.tier</p> }
+        }
+    }
+</div>

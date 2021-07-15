@@ -14,7 +14,7 @@ namespace R6MIX.Models
         public string name { get; set; }
         public List<Series> series { get; set; }
         public string slug { get; set; }
-        public object url { get; set; }
+        public string url { get; set; }
         public Videogame videogame { get; set; }
     }
 }

@@ -1,13 +1,26 @@
-﻿@model IEnumerable<R6MIX.Models.ApiModels.Player>
+﻿@model IEnumerable<R6MIX.Models.League>
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Players</h1>
-    @foreach (var item in Model)
-    {
-        <p>@item.first_name</p>
-    }
+    <h1 class="display-4">Leagues</h1>
+    <div class="d-flex align-items-end justify-content-center row">
+        @foreach (var item in Model)
+        {
+            <div class="col-2 pb-3">
+                <div class="card bg-dark border-0 mb-3">
+                    <div class="  d-flex justify-content-center pb-2">
+                        <img class="card-img-top" src="@item.image_url" alt="League image" style="width: 100px; height: auto;">
+                    </div>
+                    <div class="card-body bg-grey text-dark py-2">
+                        <a class="stretched-link nav-link py-1" asp-controller="ESportAPI" asp-action="League" asp-route-id="@item.id">
+                            <h5 class="font-weight-bold">@item.name</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

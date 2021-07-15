@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using R6MIX.Models;
 using R6MIX.Models.ApiModels;
 using System;
 using System.Collections.Generic;
@@ -16,16 +17,36 @@ namespace R6MIX.Controllers
         private static string ApiBaseUrl = "https://api.pandascore.co/r6siege/";
         public async Task<IActionResult> Index()
         {
-            List<Player> players = new List<Player>();
+            List<League> leagues = new List<League>();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync(ApiBaseUrl + "players?" + TokenAsQuery))
+                using (var response = await httpClient.GetAsync(ApiBaseUrl + "leagues?" + TokenAsQuery))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    players = JsonConvert.DeserializeObject<List<Player>>(apiResponse);
+                    leagues = JsonConvert.DeserializeObject<List<League>>(apiResponse,
+                            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
                 }
             }
-            return View(players);
+            return View(leagues);
+        }
+
+        public async Task<IActionResult> League(int? id) {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            List<League> leagues = new List<League>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(ApiBaseUrl + "leagues?" + TokenAsQuery))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    leagues = JsonConvert.DeserializeObject<List<League>>(apiResponse,
+                            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                }
+            }
+            return View(leagues.First(m => m.id == id));
         }
 
         public async Task<IActionResult> AllPlayers()
