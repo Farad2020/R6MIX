@@ -76,11 +76,18 @@ namespace R6MIX.Controllers
                 return NotFound();
             }
 
-            var @operator = await _context.Operator.FindAsync(id);
+            var @operator = await _context.Operator.Include(m => m.OpSide).Include(m => m.OpLoadout)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (@operator == null)
             {
                 return NotFound();
             }
+
+            ViewBag.Sides = await _context.Side.ToListAsync();
+            ViewBag.OriginalSide = @operator.OpSide;
+            ViewBag.Loadouts = await _context.Loadout.ToListAsync();
+            ViewBag.OriginalLoadout = @operator.OpLoadout;
+
             return View(@operator);
         }
 
