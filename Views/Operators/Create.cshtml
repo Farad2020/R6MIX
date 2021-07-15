@@ -86,6 +86,28 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-sm btn-dark" />
             </div>
+
+            <div class="form-group">
+                <label for="OpLoadoutId">Choose a Loadout:</label>
+
+                <select class="form-control" name="OpLoadoutId">
+                    @foreach (Loadout loadout in ViewBag.Loadouts)
+                    {
+                        <option value="@loadout.Id">@loadout.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="OpSideId">Choose a Side:</label>
+
+                <select class="form-control" name="OpSideId">
+                    @foreach (Side side in ViewBag.Sides)
+                    {
+                        <option value="@side.Id">@side.Name</option>
+                    }
+                </select>
+            </div>
         </form>
     </div>
 </div>

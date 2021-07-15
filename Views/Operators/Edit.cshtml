@@ -86,9 +86,9 @@
             </div>
 
             <div class="form-group">
-                <label for="OpLoadout">Choose a Loadout:</label>
+                <label for="OpLoadoutId">Choose a Loadout:</label>
 
-                <select class="form-control" name="OpLoadout">
+                <select class="form-control" name="OpLoadoutId">
                     @foreach (Loadout loadout in ViewBag.Loadouts)
                     {
                         if (Model.OpLoadout.Id == loadout.Id)
@@ -105,9 +105,9 @@
             </div>
 
             <div class="form-group">
-                <label for="OpSide">Choose a Side:</label>
+                <label for="OpSideId">Choose a Side:</label>
 
-                <select class="form-control" name="OpSide">
+                <select class="form-control" name="OpSideId">
                     @foreach (Side side in ViewBag.Sides)
                     {
                         if (Model.OpSide.Id == side.Id)

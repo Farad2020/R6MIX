@@ -46,8 +46,11 @@ namespace R6MIX.Controllers
 
         [Authorize]
         // GET: Operators/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+
+            ViewBag.Sides = await _context.Side.ToListAsync();
+            ViewBag.Loadouts = await _context.Loadout.ToListAsync();
             return View();
         }
 
@@ -56,10 +59,13 @@ namespace R6MIX.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,OpImgLink,OpIconLink,Role,Origin,Biography,PshycoPortrait,Armor,Speed,Difficulty,AbilityName,AbilityIcon,AbilityTLDR,AbilityDemoLink")] Operator @operator)
+        public async Task<IActionResult> Create(int OpLoadoutId, int OpSideId, [Bind("Id,Name,OpImgLink,OpIconLink,Role,Origin,Biography,PshycoPortrait,Armor,Speed,Difficulty,AbilityName,AbilityIcon,AbilityTLDR,AbilityDemoLink")] Operator @operator)
         {
             if (ModelState.IsValid)
             {
+                @operator.OpLoadout = _context.Loadout.FirstOrDefault(m => m.Id == OpLoadoutId);
+                @operator.OpSide = _context.Side.FirstOrDefault(m => m.Id == OpSideId);
+
                 _context.Add(@operator);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -96,7 +102,7 @@ namespace R6MIX.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,OpImgLink,OpIconLink,Role,Origin,Biography,PshycoPortrait,Armor,Speed,Difficulty,AbilityName,AbilityIcon,AbilityTLDR,AbilityDemoLink")] Operator @operator)
+        public async Task<IActionResult> Edit(int id, int OpLoadoutId, int OpSideId, [Bind("Id,Name,OpImgLink,OpIconLink,Role,Origin,Biography,PshycoPortrait,Armor,Speed,Difficulty,AbilityName,AbilityIcon,AbilityTLDR,AbilityDemoLink")] Operator @operator)
         {
             if (id != @operator.Id)
             {
@@ -107,7 +113,11 @@ namespace R6MIX.Controllers
             {
                 try
                 {
+                    @operator.OpLoadout = _context.Loadout.FirstOrDefault(m => m.Id == OpLoadoutId);
+                    @operator.OpSide = _context.Side.FirstOrDefault(m => m.Id == OpSideId);
+
                     _context.Update(@operator);
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
