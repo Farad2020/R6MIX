@@ -23,9 +23,17 @@ namespace R6MIX.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search)
         {
-            return View(await _context.Operator.ToListAsync());
+            var ops = from op in _context.Operator
+                         select op;
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                ops.Include(m => m.OpSide);
+                ops = ops.Where(m=> m.Name.ToLower().Contains(search.ToLower()) || m.OpSide.Name.ToLower().Contains(search.ToLower()));
+            }
+            return View(await ops.ToListAsync());
         }
 
         public IActionResult Privacy()
