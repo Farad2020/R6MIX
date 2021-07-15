@@ -25,6 +25,11 @@
             @if (serie.season != null) { <p>Season: @serie.season</p> }
             @if (serie.year != null) { <p>Year: @serie.year</p> }
             @if (serie.tier != null) { <p>Tier: @serie.tier</p> }
+            @*@if (serie.id != null) { 
+                <a class="btn btn-sm btn-dark" asp-controller="ESportAPI" asp-action="Serie" asp-route-id="@serie.id">
+                    Click Here To Know More
+                </a> 
+                }*@
         }
     }
 </div>

@@ -49,6 +49,26 @@ namespace R6MIX.Controllers
             return View(leagues.First(m => m.id == id));
         }
 
+        public async Task<IActionResult> Serie(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            List<Series> serie = new List<Series>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(ApiBaseUrl + "series?" + TokenAsQuery))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    serie = JsonConvert.DeserializeObject<List<Series>>(apiResponse,
+                            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                }
+            }
+            return View(serie.First(m => m.id == id));
+        }
+
         public async Task<IActionResult> AllPlayers()
         {
             List<Player> players = new List<Player>();

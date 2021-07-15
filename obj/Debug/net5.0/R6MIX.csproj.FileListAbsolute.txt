@@ -485,3 +485,4 @@ C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Areas\Identity\Pages\
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\ESportAPI\League.cshtml.g.cs
 C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\Home\DBPanel.cshtml.g.cs
+C:\Users\Faraby\Desktop\Gafar\R6MIX\obj\Debug\net5.0\Razor\Views\ESportAPI\Serie.cshtml.g.cs
