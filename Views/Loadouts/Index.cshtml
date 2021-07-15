@@ -47,27 +47,24 @@
                 @Html.DisplayFor(modelItem => item.PrimaryWeapon)
             </td>
             <td>
-                <img src="@item.PrimaryWeaponImg" />
-                @Html.DisplayFor(modelItem => item.PrimaryWeaponImg)
+                <img src="@item.PrimaryWeaponImg" style="width: 150px; height:auto;"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SecondaryWeapon)
             </td>
             <td>
-                <img src="@item.SecondaryWeaponImg" />
-                @Html.DisplayFor(modelItem => item.SecondaryWeaponImg)
+                <img src="@item.SecondaryWeaponImg" style="width: 150px; height:auto;"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gadget)
             </td>
             <td>
-                <img src="@item.GadgetImg" />
-                @Html.DisplayFor(modelItem => item.GadgetImg)
+                <img src="@item.GadgetImg" style="width: 150px; height:auto;"/>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-sm btn-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="btn btn-sm btn-dark" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <a class="btn btn-sm btn-dark" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

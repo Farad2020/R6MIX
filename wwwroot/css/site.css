@@ -14,7 +14,11 @@ for details on configuring this project to bundle and minify static web assets. 
     --bg-grey: #C3C3C3;
 }
 
-.bg-grey{
+.table{
+    color: var(--text-primary-color)
+}
+
+.bg-grey {
     background-color: var(--bg-grey);
 }
 
